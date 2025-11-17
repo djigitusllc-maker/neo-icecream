@@ -673,23 +673,22 @@
               cream.
             </p>
 
-            <div class="hero-actions">
-              <button
-                class="btn btn-primary contact-btn"
-                data-user="vm"
-                data-domain="neo-icecream.com"
-              >
-                Contact us
-              </button>
+           <div class="hero-actions">
+  <a
+    class="btn btn-primary"
+    href="mailto:&#118;&#109;&#64;&#110;&#101;&#111;&#45;&#105;&#99;&#101;&#99;&#114;&#101;&#97;&#109;&#46;&#99;&#111;&#109;"
+  >
+    Contact us
+  </a>
 
-              <button
-                class="btn btn-ghost contact-btn"
-                data-user="vm"
-                data-domain="neo-icecream.com"
-              >
-                Request pitch deck
-              </button>
-            </div>
+  <a
+    class="btn btn-ghost"
+    href="mailto:&#118;&#109;&#64;&#110;&#101;&#111;&#45;&#105;&#99;&#101;&#99;&#114;&#101;&#97;&#109;&#46;&#99;&#111;&#109;?subject=Request%20Pitch%20Deck"
+  >
+    Request pitch deck
+  </a>
+</div>
+
 
             <p class="hero-note">
               Email address is protected — simply click the button to reach the
@@ -931,13 +930,13 @@
             </p>
 
             <div class="investor-cta">
-              <button
-                class="btn btn-primary contact-btn"
-                data-user="vm"
-                data-domain="neo-icecream.com"
-              >
-                Email the founders
-              </button>
+             <a
+  class="btn btn-primary"
+  href="mailto:&#118;&#109;&#64;&#110;&#101;&#111;&#45;&#105;&#99;&#101;&#99;&#114;&#101;&#97;&#109;&#46;&#99;&#111;&#109;?subject=NeoIceCream%20Investor%20Inquiry"
+>
+  Email the founders
+</a>
+
               <span class="investor-small">
                 Click the button to send us an email — the address itself is not
                 displayed on the page.
@@ -959,35 +958,11 @@
     </footer>
   </div>
 
- <script>
-  (function () {
-    // подставляем текущий год в футер
-    var yearEl = document.getElementById('year');
-    if (yearEl) {
-      yearEl.textContent = new Date().getFullYear();
-    }
-
-    // обработка всех кнопок с классом contact-btn
-    var buttons = document.querySelectorAll('.contact-btn');
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener('click', function () {
-        var user = this.getAttribute('data-user');      // "vm"
-        var domain = this.getAttribute('data-domain');  // "neo-icecream.com"
-        if (!user || !domain) return;
-
-        var email = user + '@' + domain;
-
-        // пробуем открыть почтовый клиент
-        window.location.href = 'mailto:' + email;
-
-        // параллельно копируем емейл в буфер и показываем сообщение
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(email).catch(function () {});
-        }
-        alert('Email скопирован: ' + email);
-      });
-    }
-  })();
+<script>
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 </script>
 </body>
 </html>
