@@ -980,24 +980,5 @@
 
     setupContactButtons();
   </script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.contact-btn');
-
-    buttons.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        const user = btn.dataset.user;      // например "vm"
-        const domain = btn.dataset.domain;  // "neo-icecream.com"
-
-        if (!user || !domain) return;
-
-        const email = user + '@' + domain;
-        window.location.href = 'mailto:' + email;
-      });
-    });
-  });
-</script>
-</body>
-</html>
 </body>
 </html>
