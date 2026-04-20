@@ -21,7 +21,36 @@
     * {
       box-sizing: border-box;
     }
+.validation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
 
+.validation-image-card {
+  background: white;
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: var(--shadow-light);
+}
+
+.validation-main-img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.validation-text-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .validation-grid {
+    grid-template-columns: 1fr;
+  }
+}
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
