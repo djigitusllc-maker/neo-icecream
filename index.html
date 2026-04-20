@@ -4,13 +4,8 @@
   <meta charset="UTF-8" />
   <title>#neoicecream — Synbiotic Frozen Dessert</title>
   <link rel="icon" type="image/png" href="browser.png" />
-<link rel="shortcut icon" href="browser.png" type="image/png" />
+  <link rel="shortcut icon" href="browser.png" type="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Если когда-нибудь подключишь реальные шрифты:
-  <link rel="stylesheet" href="ссылка_на_Croogla_Bold.css">
-  <link rel="stylesheet" href="ссылка_на_Artica_Light.css">
-  -->
 
   <style>
     :root {
@@ -29,8 +24,7 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #ffffff 0, var(--bg-page) 60%);
       color: var(--graphite-deep);
       line-height: 1.5;
@@ -59,8 +53,6 @@
       padding: 0 20px;
     }
 
-    /* HEADER / HERO */
-
     header {
       position: sticky;
       top: 0;
@@ -81,19 +73,15 @@
       display: inline-flex;
       align-items: baseline;
       gap: 4px;
-      font-weight: 800; /* имитация Croogla Bold */
+      font-weight: 800;
       letter-spacing: 0.06em;
       color: var(--graphite-deep);
     }
 
-    .logo-hash {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    .logo-text {
-      font-size: 1.1rem;
-      text-transform: uppercase;
+    .logo-img {
+      height: 130px;
+      display: block;
+      object-fit: contain;
     }
 
     .nav-pill {
@@ -135,7 +123,7 @@
 
     .tagline {
       font-size: 1.1rem;
-      font-weight: 300; /* имитация Artica Light */
+      font-weight: 300;
       color: rgba(42, 42, 42, 0.85);
       margin-bottom: 18px;
     }
@@ -143,7 +131,7 @@
     .hero-text {
       font-size: 0.98rem;
       color: rgba(42, 42, 42, 0.85);
-      max-width: 480px;
+      max-width: 520px;
       margin-bottom: 28px;
     }
 
@@ -164,8 +152,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      transition: transform 0.16s ease, box-shadow 0.16s ease,
-        background 0.2s ease;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.2s ease;
       font-weight: 500;
     }
 
@@ -194,14 +181,13 @@
     .hero-note {
       font-size: 0.83rem;
       color: rgba(67, 67, 67, 0.75);
+      margin-top: 12px;
     }
 
-    /* HERO MOCKUP CARD */
-
     .hero-mockup {
-      background: radial-gradient(circle at top left, #ffffff 0, #e1f2f8 60%);
+      background: #ffffff;
       border-radius: 32px;
-      padding: 26px 22px;
+      padding: 18px;
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
@@ -216,105 +202,12 @@
       margin-bottom: 16px;
     }
 
-    .hero-mockup-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 12px;
+    .hero-mockup-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 20px;
     }
-
-    .hero-mockup-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 11px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      font-size: 0.78rem;
-      margin-bottom: 18px;
-    }
-
-    .hero-mockup-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #6abed8;
-    }
-
-    .hero-mockup-grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .popsicle-stack {
-      position: relative;
-      width: 90px;
-      height: 190px;
-    }
-
-    .popsicle {
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: 64px;
-      height: 120px;
-      border-radius: 30px;
-      background: linear-gradient(160deg, #fff5f1, #ffd1b8);
-      box-shadow: var(--shadow-light);
-    }
-
-    .popsicle::after {
-      content: "";
-      position: absolute;
-      bottom: -26px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 32px;
-      border-radius: 8px;
-      background: #f4d3a3;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-    }
-
-    .popsicle.p2 {
-      transform: translate(22px, 16px) rotate(8deg);
-      background: linear-gradient(160deg, #fdf7ff, #f3d5ff);
-    }
-
-    .popsicle.p3 {
-      transform: translate(-22px, 26px) rotate(-8deg);
-      background: linear-gradient(160deg, #f4fbff, #c8e7ed);
-    }
-
-    .popsicle-highlight {
-      position: absolute;
-      top: 16px;
-      left: 14px;
-      width: 10px;
-      height: 46px;
-      border-radius: 999px;
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0)
-      );
-      opacity: 0.8;
-    }
-
-    .hero-mockup-points {
-      font-size: 0.85rem;
-      color: rgba(42, 42, 42, 0.85);
-      display: grid;
-      gap: 8px;
-    }
-
-    .hero-mockup-point span {
-      font-weight: 600;
-    }
-
-    /* SECTIONS */
 
     main {
       flex: 1;
@@ -346,7 +239,7 @@
     .section-sub {
       font-size: 0.98rem;
       color: rgba(67, 67, 67, 0.8);
-      max-width: 560px;
+      max-width: 650px;
       margin-top: 10px;
     }
 
@@ -359,12 +252,14 @@
       color: rgba(42, 42, 42, 0.9);
     }
 
-    /* FEATURES */
-
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
+    }
+
+    .features-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .feature-card {
@@ -409,8 +304,6 @@
       top: -36px;
       right: -36px;
     }
-
-    /* TECHNOLOGY / STATUS */
 
     .split-grid {
       display: grid;
@@ -458,89 +351,38 @@
       margin-bottom: 6px;
     }
 
-    /* MOCKUPS SECTION */
-
-    .mockup-grid {
+    .product-visual-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
-    .mockup-card {
-      background: linear-gradient(160deg, #ffffff, #e7f4f8);
+    .product-visual-card {
+      background: white;
       border-radius: 22px;
-      padding: 18px 16px 20px;
+      padding: 16px;
       box-shadow: var(--shadow-light);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 12px;
     }
 
-    .mockup-popsicle {
-      position: relative;
-      width: 62px;
-      height: 116px;
-      border-radius: 30px;
-      box-shadow: var(--shadow-light);
-      margin-bottom: 16px;
-      overflow: hidden;
+    .product-visual-img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 14px;
     }
 
-    .mockup-stick {
-      position: absolute;
-      bottom: -28px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 34px;
-      border-radius: 8px;
-      background: #f4d3a3;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-    }
-
-    .mockup-flavor {
-      font-size: 0.95rem;
+    .product-visual-title {
+      font-size: 1rem;
       font-weight: 600;
       color: var(--graphite-deep);
+      margin-bottom: 6px;
     }
 
-    .mockup-note {
-      font-size: 0.86rem;
+    .product-visual-text {
+      font-size: 0.9rem;
       color: rgba(42, 42, 42, 0.8);
     }
-
-    /* разные градиенты вкусов */
-
-    .flavor-mango {
-      background: linear-gradient(160deg, #fff6e9, #ffd089);
-    }
-
-    .flavor-choco {
-      background: linear-gradient(160deg, #f5ece3, #c79a7b);
-    }
-
-    .flavor-berry {
-      background: linear-gradient(160deg, #fff1f6, #f7b8cf);
-    }
-
-    .mockup-highlight {
-      position: absolute;
-      top: 14px;
-      left: 12px;
-      width: 10px;
-      height: 48px;
-      border-radius: 999px;
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0)
-      );
-      opacity: 0.85;
-    }
-
-    /* INVESTORS / CONTACT */
 
     .investor-card {
       background: white;
@@ -556,7 +398,7 @@
     .investor-text {
       font-size: 0.94rem;
       color: rgba(42, 42, 42, 0.9);
-      max-width: 520px;
+      max-width: 640px;
     }
 
     .investor-cta {
@@ -570,8 +412,6 @@
       font-size: 0.82rem;
       color: rgba(67, 67, 67, 0.75);
     }
-
-    /* FOOTER */
 
     footer {
       background: var(--graphite-deep);
@@ -599,8 +439,6 @@
       opacity: 0.8;
     }
 
-    /* RESPONSIVE */
-
     @media (max-width: 900px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -615,8 +453,9 @@
       }
 
       .features-grid,
+      .features-grid-4,
       .split-grid,
-      .mockup-grid {
+      .product-visual-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -641,27 +480,17 @@
       section {
         padding: 32px 0;
       }
+
+      .logo-img {
+        height: 90px;
+      }
     }
-    /* LOGO IMAGE SIZE */
-.logo-img {
-  height: 130px;       /* увеличили логотип */
-  display: block;
-  object-fit: contain;
-}
 
-/* мобильная версия */
-@media (max-width: 600px) {
-  .logo-img {
-    height: 90px;
-  }
-}
-
-@media (max-width: 400px) {
-  .logo-img {
-    height: 75px;
-  }
-}
-
+    @media (max-width: 400px) {
+      .logo-img {
+        height: 75px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -670,346 +499,338 @@
       <div class="container">
         <div class="nav">
           <div class="logo">
-  <img src="Color_logo_no_background.png" alt="#neoicecream logo" class="logo-img">
-</div>
+            <img src="Color_logo_no_background.png" alt="#neoicecream logo" class="logo-img">
+          </div>
           <div class="nav-pill">Synbiotic Frozen Dessert</div>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- HERO -->
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <div class="eyebrow">Functional frozen dessert</div>
+            <div class="eyebrow">Synbiotic frozen dessert</div>
             <h1>Tasty is healthy. Healthy is tasty.</h1>
             <p class="tagline">
-              #neoicecream is a next-generation fermented frozen dessert with
-              probiotics and prebiotics — a true synbiotic treat.
+              #neoicecream is a fermented synbiotic frozen dessert combining probiotics,
+              prebiotics, and a consumer-friendly frozen format.
             </p>
             <p class="hero-text">
-              Low sugar, clean-label ingredients and science-driven formulation
-              designed to support gut health while still feeling like real ice
-              cream.
+              We are developing #neoicecream through pilot validation and investor-focused
+              commercialization planning, with formats designed for modern frozen retail.
             </p>
 
-           <div class="hero-actions">
-  <a
-  class="btn btn-primary"
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=vm@neo-icecream.com"
-  target="_blank"
->
-  Contact us
-</a>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="NeoIceCream_Presentation.pdf"
+                download
+                id="download-presentation-top"
+              >
+                Download presentation
+              </a>
 
-  <a
-  class="btn btn-ghost"
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=vm@neo-icecream.com&su=Request%20Pitch%20Deck"
-  target="_blank"
->
-  Request pitch deck
-</a>
-</div>
-
+              <a
+                class="btn btn-ghost"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=vm@neo-icecream.com&su=NeoIceCream%20Inquiry"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact founders
+              </a>
+            </div>
 
             <p class="hero-note">
-              Email address is protected — simply click the button to reach the
-              founders.
+              Download our presentation or contact the founders directly by email.
             </p>
           </div>
 
           <aside class="hero-mockup">
-            <div class="hero-mockup-label">Pilot concept</div>
-            <div class="hero-mockup-title">
-              Synbiotic popsicle, 70&nbsp;g daily portion
-            </div>
-            <div class="hero-mockup-badge">
-              <span class="hero-mockup-badge-dot"></span>
-              <span>Fermented · Probiotic · Prebiotic</span>
-            </div>
-
-            <div class="hero-mockup-grid">
-              <div class="popsicle-stack" aria-hidden="true">
-                <div class="popsicle p2">
-                  <div class="popsicle-highlight"></div>
-                </div>
-                <div class="popsicle p3">
-                  <div class="popsicle-highlight"></div>
-                </div>
-                <div class="popsicle">
-                  <div class="popsicle-highlight"></div>
-                </div>
-              </div>
-              <div class="hero-mockup-points">
-                <div class="hero-mockup-point">
-                  <span>&gt;10⁹ CFU</span> live cultures per portion
-                </div>
-                <div class="hero-mockup-point">
-                  <span>Synbiotic formula</span> — probiotics + prebiotics
-                </div>
-                <div class="hero-mockup-point">
-                  <span>Light &amp; creamy</span> texture through fermentation
-                </div>
-              </div>
-            </div>
+            <div class="hero-mockup-label">Presentation visual</div>
+            <img
+              src="hero-product.jpg"
+              alt="NeoIceCream presentation product visual"
+              class="hero-mockup-image"
+            >
           </aside>
         </div>
       </section>
 
-      <!-- ABOUT -->
       <section id="about">
         <div class="container">
           <div class="section-heading">
             <div class="section-eyebrow">About the product</div>
             <h2 class="section-title">What is #neoicecream?</h2>
             <p class="section-sub">
-              A fermented frozen dessert designed as a daily synbiotic portion —
-              combining carefully selected probiotic cultures with prebiotic
-              fibers in a low-sugar, clean-label formula.
+              #neoicecream is a synbiotic frozen dessert concept built on a fermented
+              base and designed to combine enjoyable taste with functional positioning.
+              The product brings together probiotics, prebiotics, and a familiar frozen
+              dessert format that can scale across multiple product lines.
             </p>
           </div>
 
           <div class="about-card">
-            Neoicecream is built on a simple idea: if people love ice cream,
-            why not make ice cream that actively supports the gut microbiome? By
-            fermenting the base and adding both probiotics and prebiotics, we
-            create a product that feels like a treat but behaves like functional
-            nutrition.
+            The project is being developed in two parallel directions: pilot-scale
+            product validation and investor-oriented planning for future commercial
+            production. Our goal is to create a differentiated frozen dessert brand at
+            the intersection of indulgence, wellness, and scalable manufacturing.
           </div>
         </div>
       </section>
 
-      <!-- FEATURES -->
       <section id="features">
         <div class="container">
           <div class="section-heading">
             <div class="section-eyebrow">Key features</div>
-            <h2 class="section-title">Fermented. Probiotic. Synbiotic.</h2>
+            <h2 class="section-title">Fermented. Functional. Scalable.</h2>
+            <p class="section-sub">
+              #neoicecream is being developed as a differentiated frozen dessert
+              platform combining product appeal, functional positioning, and
+              commercialization potential.
+            </p>
+          </div>
+
+          <div class="features-grid features-grid-4">
+            <article class="feature-card">
+              <div class="feature-orb"></div>
+              <div class="feature-pill">Fermented base</div>
+              <div class="feature-title">Cultured product foundation</div>
+              <p class="feature-text">
+                Built on a fermented dairy base for distinctive taste profile, product
+                differentiation, and functional brand positioning.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-orb"></div>
+              <div class="feature-pill">Probiotic cultures</div>
+              <div class="feature-title">Live culture concept</div>
+              <p class="feature-text">
+                Developed with probiotic cultures selected for a synbiotic frozen
+                dessert concept and future validated product positioning.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-orb"></div>
+              <div class="feature-pill">Prebiotic support</div>
+              <div class="feature-title">Synbiotic formulation</div>
+              <p class="feature-text">
+                Formulated with prebiotic ingredients to support a synbiotic product
+                concept and broaden better-for-you appeal.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-orb"></div>
+              <div class="feature-pill">Frozen format</div>
+              <div class="feature-title">Consumer-friendly convenience</div>
+              <p class="feature-text">
+                A familiar frozen dessert format designed for repeat purchase,
+                portion flexibility, and scalable commercialization.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="formats">
+        <div class="container">
+          <div class="section-heading">
+            <div class="section-eyebrow">Commercial formats</div>
+            <h2 class="section-title">Formats in development</h2>
+            <p class="section-sub">
+              The concept is being developed as a flexible frozen dessert platform
+              with multiple commercial directions.
+            </p>
           </div>
 
           <div class="features-grid">
             <article class="feature-card">
               <div class="feature-orb"></div>
-              <div class="feature-pill">Fermented base</div>
-              <div class="feature-title">Naturally creamy &amp; gentle</div>
+              <div class="feature-pill">Single-serve</div>
+              <div class="feature-title">70 g bar format</div>
               <p class="feature-text">
-                The frozen base is fermented before freezing, creating a smoother
-                texture and a light, refreshing tang while improving
-                digestibility.
+                A convenient individual format designed for better-for-you frozen
+                dessert positioning.
               </p>
             </article>
 
             <article class="feature-card">
               <div class="feature-orb"></div>
-              <div class="feature-pill">Probiotic</div>
-              <div class="feature-title">Alive at freezer temperature</div>
+              <div class="feature-pill">Multi-serve</div>
+              <div class="feature-title">Family tub format</div>
               <p class="feature-text">
-                Selected strains are able to survive both the production process
-                and frozen storage, delivering a meaningful CFU dose in each
-                70&nbsp;g portion.
+                A scalable retail direction for broader household use and brand
+                line extension.
               </p>
             </article>
 
             <article class="feature-card">
               <div class="feature-orb"></div>
-              <div class="feature-pill">Synbiotic concept</div>
-              <div class="feature-title">Probiotics + prebiotics</div>
+              <div class="feature-pill">Platform potential</div>
+              <div class="feature-title">Expandable frozen dessert line</div>
               <p class="feature-text">
-                Prebiotic fibers in the recipe help feed beneficial bacteria
-                once they reach the gut, making the frozen dessert a true
-                synbiotic product, not just “probiotic flavored ice cream”.
+                The product concept is suitable for future line expansion across
+                frozen dessert categories.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- TECHNOLOGY & STATUS -->
       <section id="tech">
         <div class="container">
           <div class="section-heading">
             <div class="section-eyebrow">Science &amp; roadmap</div>
-            <h2 class="section-title">Technology & development status</h2>
+            <h2 class="section-title">Technology &amp; development status</h2>
           </div>
 
           <div class="split-grid">
             <article class="info-card">
-              <div class="info-tag">Patented approach</div>
-              <h3>Technology with proven track record</h3>
+              <div class="info-tag">Development status</div>
+              <h3>From pilot validation to scale-up planning</h3>
               <p>
-                The concept behind our synbiotic frozen dessert is based on a
-                patented technology already successfully commercialized in
-                Europe. The product format shows strong repeat-purchase rates
-                and customer acceptance as a daily portion.
+                #neoicecream is currently being advanced through a staged
+                development pathway that combines technical product validation
+                with commercial planning for future scale.
               </p>
               <p>
-                By using cold as a natural preservative for beneficial cultures,
-                frozen desserts can deliver live microorganisms more reliably
-                than many fermented drinks with short shelf life.
+                The project is positioned as a differentiated frozen dessert
+                concept at the intersection of indulgence, wellness, and
+                scalable manufacturing.
               </p>
             </article>
 
             <article class="info-card">
-              <div class="info-tag">Development roadmap</div>
-              <h3>From pilot batch to dedicated plant</h3>
+              <div class="info-tag">Current pathway</div>
+              <h3>Structured next-stage development</h3>
               <ul class="info-list">
-                <li>
-                  Pilot batch in collaboration with a university-based mini
-                  production facility.
-                </li>
-                <li>
-                  Detailed scaling plan for an industrial line in Southern
-                  California.
-                </li>
-                <li>
-                  Investor-ready financial model and capacity scenarios based on
-                  daily portion consumption.
-                </li>
-                <li>
-                  Flexible format: popsicles, cups and family packs for retail
-                  &amp; foodservice.
-                </li>
+                <li>Pilot batch planning with a university-based mini-production facility</li>
+                <li>Commercial and investor materials prepared for early-stage discussions</li>
+                <li>Manufacturing scale-up model under development for Southern California</li>
+                <li>Multiple product formats under consideration, including bars and family tubs</li>
               </ul>
             </article>
           </div>
         </div>
       </section>
-</section>    <!-- END TECH -->
 
-<!-- SCIENCE / WHY FROZEN -->
-<section id="science">
-  <div class="container">
-    <div class="section-heading">
-      <div class="section-eyebrow">Scientific background</div>
-      <h2 class="section-title">Why fermented & why frozen?</h2>
-      <p class="section-sub">
-        A simple scientific explanation of #neoicecream’s functional concept.
-      </p>
-    </div>
-
-    <div class="split-grid">
-      <article class="info-card">
-        <div class="info-tag">Fermentation</div>
-        <h3>Why fermentation matters</h3>
-        <ul class="info-list">
-          <li><strong>Fermentation</strong> creates a smoother texture and gentle acidity.</li>
-          <li>It improves digestibility vs. non-fermented frozen bases.</li>
-          <li>It allows development of beneficial metabolites that support gut-friendly bacteria.</li>
-        </ul>
-      </article>
-
-      <article class="info-card">
-        <div class="info-tag">Frozen matrix</div>
-        <h3>Why frozen protects probiotics</h3>
-        <ul class="info-list">
-          <li>The frozen matrix keeps <strong>live cultures stable</strong> over longer periods.</li>
-          <li>Cold acts as a natural preservative — no need for chemical stabilizers.</li>
-          <li>Survival rate is higher vs. fermented drinks with short shelf life.</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- MOCKUPS SECTION -->
-<section id="mockups">
-
-      <!-- MOCKUPS SECTION -->
-      <section id="mockups">
+      <section id="science">
         <div class="container">
           <div class="section-heading">
-            <div class="section-eyebrow">Packaging concepts</div>
-            <h2 class="section-title">Synbiotic popsicle lineup</h2>
+            <div class="section-eyebrow">Scientific background</div>
+            <h2 class="section-title">Why fermented &amp; why frozen?</h2>
             <p class="section-sub">
-              Conceptual mockups of 70&nbsp;g daily-portion popsicles in our
-              brand colors. These are visual directions for future industrial
-              design, not final packaging.
+              A concise explanation of the product logic behind #neoicecream.
             </p>
           </div>
 
-          <div class="mockup-grid">
-            <!-- MANGO -->
-            <article class="mockup-card">
-              <div class="mockup-popsicle flavor-mango">
-                <div class="mockup-highlight"></div>
-                <div class="mockup-stick"></div>
-              </div>
-              <div class="mockup-flavor">Tropical Mango</div>
-              <div class="mockup-note">
-                Sun-colored bar with soft gradients from pale cream to ripe
-                mango. Minimal #neoicecream wordmark and a small
-                <strong>“synbiotic 10⁹ CFU”</strong> badge.
+          <div class="split-grid">
+            <article class="info-card">
+              <div class="info-tag">Fermented approach</div>
+              <h3>Why fermentation matters</h3>
+              <ul class="info-list">
+                <li>Supports distinctive taste and positioning</li>
+                <li>Creates a differentiated frozen dessert concept</li>
+                <li>Connects indulgence with better-for-you perception</li>
+              </ul>
+            </article>
+
+            <article class="info-card">
+              <div class="info-tag">Frozen format</div>
+              <h3>Why frozen works</h3>
+              <ul class="info-list">
+                <li>Familiar and accessible consumer format</li>
+                <li>Suitable for portion-based and multi-serve formats</li>
+                <li>Well aligned with modern frozen retail and innovation trends</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="mockups">
+        <div class="container">
+          <div class="section-heading">
+            <div class="section-eyebrow">Product visuals</div>
+            <h2 class="section-title">Presentation visuals</h2>
+            <p class="section-sub">
+              Real product visuals used in the presentation materials.
+            </p>
+          </div>
+
+          <div class="product-visual-grid">
+            <article class="product-visual-card">
+              <img src="product-visual-1.jpg" alt="NeoIceCream 70 g bar visual" class="product-visual-img">
+              <div class="product-visual-title">70 g bar format</div>
+              <div class="product-visual-text">
+                Single-serve synbiotic frozen dessert concept.
               </div>
             </article>
 
-            <!-- CHOCOLATE -->
-            <article class="mockup-card">
-              <div class="mockup-popsicle flavor-choco">
-                <div class="mockup-highlight"></div>
-                <div class="mockup-stick"></div>
-              </div>
-              <div class="mockup-flavor">Cocoa &amp; Cream</div>
-              <div class="mockup-note">
-                Light chocolate gradient with subtle speckles suggesting real
-                cocoa. Ice-blue accent stripe on the wrapper to keep the
-                wellness look.
+            <article class="product-visual-card">
+              <img src="product-visual-2.jpg" alt="NeoIceCream retail concept visual" class="product-visual-img">
+              <div class="product-visual-title">Retail-ready visual concept</div>
+              <div class="product-visual-text">
+                Brand-facing presentation render for commercial positioning.
               </div>
             </article>
 
-            <!-- BERRY -->
-            <article class="mockup-card">
-              <div class="mockup-popsicle flavor-berry">
-                <div class="mockup-highlight"></div>
-                <div class="mockup-stick"></div>
-              </div>
-              <div class="mockup-flavor">Berry Kefir Twist</div>
-              <div class="mockup-note">
-                Soft pink-berry tone referencing fermented dairy with fruit.
-                Clean layout, small icons for
-                <strong>fermented · probiotic · prebiotic</strong>.
+            <article class="product-visual-card">
+              <img src="product-visual-3.jpg" alt="NeoIceCream future line extension visual" class="product-visual-img">
+              <div class="product-visual-title">Future line extension</div>
+              <div class="product-visual-text">
+                Expandable frozen dessert platform potential.
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- INVESTORS / CONTACT -->
       <section id="investors">
         <div class="container">
           <div class="section-heading">
             <div class="section-eyebrow">Investors &amp; partners</div>
-            <h2 class="section-title">Open to early-stage conversations</h2>
+            <h2 class="section-title">Open to strategic conversations</h2>
           </div>
 
           <div class="investor-card">
             <p class="investor-text">
-              We are currently assembling an investor-ready package: pilot
-              production data, unit economics, and a scalable plant concept for
-              Southern California. If you are interested in functional food,
-              microbiome health or innovative frozen formats, we would be happy
-              to share our materials.
+              We are currently seeking strategic conversations with investors,
+              pilot manufacturing partners, and commercialization advisors
+              interested in differentiated frozen dessert innovation.
             </p>
 
             <div class="investor-cta">
-             <a
-  class="btn btn-primary"
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=vm@neo-icecream.com&su=NeoIceCream%20Investor%20Inquiry"
-  target="_blank"
->
-  Email the founders
-</a>
+              <a
+                class="btn btn-primary"
+                href="NeoIceCream_Presentation.pdf"
+                download
+                id="download-presentation-bottom"
+              >
+                Download presentation
+              </a>
 
-              <span class="investor-small">
-                Click the button to send us an email.
-              </span>
+              <a
+                class="btn btn-ghost"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=vm@neo-icecream.com&su=NeoIceCream%20Strategic%20Inquiry"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact founders
+              </a>
             </div>
+
+            <span class="investor-small">
+              Download the deck or contact us directly by email.
+            </span>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
       <div class="container footer-inner">
         <div class="footer-hash">#neoicecream</div>
@@ -1020,11 +841,37 @@
     </footer>
   </div>
 
-<script>
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-</script>
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    function trackPresentationDownload(position) {
+      console.log('Presentation downloaded from:', position);
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'download_presentation', {
+          event_category: 'engagement',
+          event_label: position
+        });
+      }
+    }
+
+    const topDownloadBtn = document.getElementById('download-presentation-top');
+    const bottomDownloadBtn = document.getElementById('download-presentation-bottom');
+
+    if (topDownloadBtn) {
+      topDownloadBtn.addEventListener('click', function () {
+        trackPresentationDownload('top_button');
+      });
+    }
+
+    if (bottomDownloadBtn) {
+      bottomDownloadBtn.addEventListener('click', function () {
+        trackPresentationDownload('bottom_button');
+      });
+    }
+  </script>
 </body>
 </html>
